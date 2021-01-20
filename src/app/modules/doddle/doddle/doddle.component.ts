@@ -138,17 +138,18 @@ export class DoddleComponent implements OnInit, AfterViewInit {
     );
     const pixels = imageData.data;
     const inputs = new Float32Array(784);
+    // NOTE: uncomment to see the resized image
     for (let i = 0; i < pixels.length; i += 4) {
       const lightness =
         255 -
         parseInt(String((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3), 10);
-      pixels[i] = lightness;
-      pixels[i + 1] = lightness;
-      pixels[i + 2] = lightness;
+      // pixels[i] = lightness;
+      // pixels[i + 1] = lightness;
+      // pixels[i + 2] = lightness;
       inputs[i / 4] = lightness / 255;
     }
     ctx.putImageData(imageData, 0, 0);
-    document.body.appendChild(resizedCanvas);
+    // document.body.appendChild(resizedCanvas);
     this.prediction = await this.model.predict(tf.tensor2d(inputs, [1, 784]));
   }
 

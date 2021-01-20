@@ -2,7 +2,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px 0px;
+  height: calc(100vh - 60px - 40px);
+  padding-top: 40px;
+  @media only screen and (max-width: 600px) {
+    padding-top: 0;
+    height: calc(100vh - 60px);
+  }
 }
 
 canvas {
@@ -10,20 +15,24 @@ canvas {
   height: 500px;
   width: 600px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  @media only screen and (max-width: 320px), screen and (max-height: 500px) {
+  margin-bottom: 15px;
+  @media only screen and (max-width: 600px) {
     height: 100%;
     width: 100%;
   }
 }
 
 .prediction {
-  margin-top: 20px;
+  margin-top: auto;
   font-size: 20px;
   font-weight: 600;
+  text-transform: capitalize;
+  height: 25px;
 }
 
 .actions {
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   button {
