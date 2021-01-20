@@ -1,0 +1,14 @@
+{
+  "editor.formatOnPaste": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.disableLanguages": ["html"],
+  "editor.formatOnSave": true,
+  "editor.rulers": [110],
+  "html.format.wrapAttributes": "force",
+  "html.format.enable": true,
+  "html.format.wrapLineLength": 110,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+}

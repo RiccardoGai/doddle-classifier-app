@@ -24,15 +24,31 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/app/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
+            "development": {
+              "optimization": true,
+              "sourceMap": true,
+              "outputHashing": "all"
+            },
+            "test": {
+              "optimization": true,
+              "sourceMap": true,
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -59,6 +75,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "ric-development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/ric-environment.ts"
+                }
+              ]
             }
           }
         },
@@ -68,6 +92,9 @@
             "browserTarget": "doddle-classifier-app:build"
           },
           "configurations": {
+            "ric-development": {
+              "browserTarget": "doddle-classifier-app:build:ric-development"
+            },
             "production": {
               "browserTarget": "doddle-classifier-app:build:production"
             }
@@ -91,7 +118,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/app/styles.scss"
             ],
             "scripts": []
           }
@@ -122,7 +149,6 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "doddle-classifier-app"
 }

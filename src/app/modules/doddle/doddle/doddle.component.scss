@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+canvas {
+  border: 1px solid #eee;
+  height: 500px;
+  width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  @media only screen and (max-width: 320px), screen and (max-height: 500px) {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.prediction {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  button {
+    margin-right: 15px;
+  }
+}

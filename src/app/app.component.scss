@@ -1,0 +1,19 @@
+.margin-header {
+  margin-top: 60px;
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  transition: 0.12s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  background: #ffffff;
+}
