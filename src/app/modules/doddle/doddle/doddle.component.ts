@@ -136,16 +136,15 @@ export class DoddleComponent implements OnInit, AfterViewInit {
     // Normalize the image
     const offset = tf.scalar(255.0);
     const normalized = tf.scalar(1.0).sub(resized.div(offset));
-    console.log(normalized);
+    // console.log(normalized);
     const batched = normalized.expandDims(0);
 
-    const resizedCanvas = document.createElement('canvas');
-    document.body.appendChild(resizedCanvas);
-    tf.browser.toPixels(normalized as tf.Tensor3D, resizedCanvas);
+    // const resizedCanvas = document.createElement('canvas');
+    // document.body.appendChild(resizedCanvas);
+    // tf.browser.toPixels(normalized as tf.Tensor3D, resizedCanvas);
 
     this.model.predict(batched);
     this.prediction = await this.model.predict(batched);
-    // this.onGuess();
   }
 
   // async onGuess() {
