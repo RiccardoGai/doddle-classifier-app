@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "set NODE_OPTIONS=--max-old-space-size=4096 && npm run serve:base",
-    "start-heroku": "node server.js",
+    "start": "node server.js",
     "serve:base": "ng serve --port 9000 --host 0.0.0.0 --ssl --ssl-cert ssl/server.crt --ssl-key ssl/server.key",
     "serve:ric": "set NODE_OPTIONS=--max-old-space-size=4096 && npm run serve:base -- --configuration=ric-development",
     "build": "npm run build:development",
@@ -13,8 +12,7 @@
     "build:production": "set NODE_OPTIONS=--max-old-space-size=4096 && ng build --configuration=production",
     "deploy:dev": "npm run build:development && node ftp-deploy dev",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "heroku-postbuild": "node server.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
