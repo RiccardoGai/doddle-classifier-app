@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--max-old-space-size=4096 && npm run serve:base",
+    "start-heroku": "node server.js",
     "serve:base": "ng serve --port 9000 --host 0.0.0.0 --ssl --ssl-cert ssl/server.crt --ssl-key ssl/server.key",
     "serve:ric": "set NODE_OPTIONS=--max-old-space-size=4096 && npm run serve:base -- --configuration=ric-development",
     "build": "npm run build:development",
@@ -26,6 +27,7 @@
     "@angular/router": "~11.0.5",
     "@tensorflow/tfjs": "^2.8.2",
     "core-js": "^3.8.1",
+    "express": "^4.17.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.3",
     "web-animations-js": "^2.3.2",
