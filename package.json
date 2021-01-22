@@ -10,7 +10,6 @@
     "build:development": "set NODE_OPTIONS=--max-old-space-size=4096 && ng build --configuration=development",
     "build:test": "set NODE_OPTIONS=--max-old-space-size=4096 && ng build --configuration=test",
     "build:production": "set NODE_OPTIONS=--max-old-space-size=4096 && ng build --configuration=production",
-    "deploy:dev": "npm run build:development && node ftp-deploy dev",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
