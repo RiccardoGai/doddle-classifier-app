@@ -13,10 +13,11 @@ export class DoddleClassifier {
   }
 
   async predict(data: tf.Tensor) {
-    const prediction = await (this.model.predict(
+    const argMax = await (this.model.predict(
       data.reshape([1, 28, 28, 1])
-    ) as Tensor).data();
-    console.log(prediction);
-    return this.classes[prediction.indexOf(Math.max(...prediction))];
+    ) as Tensor)
+      .argMax(-1)
+      .data();
+    return this.classes[argMax[0]];
   }
 }
