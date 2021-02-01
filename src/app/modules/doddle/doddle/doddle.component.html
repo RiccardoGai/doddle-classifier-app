@@ -1,10 +1,24 @@
-<canvas #canvas></canvas>
-<div class="prediction"> {{prediction}} </div>
-<div class="actions">
-    <button (click)="onGuess()">
-        Guess
-    </button>
-    <button (click)="onClear()">
-        Clear
-    </button>
+<div class="grid">
+    <div class="col-sm mt-4">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-direction-column">
+                <canvas #canvas></canvas>
+                <button class="mt-2"
+                    (click)="onClear()">
+                    Clear
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm mt-4">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-direction-column">
+                <div class="mb-1 d-flex align-items-center font-weight-semibold"
+                    *ngFor="let pred of predictions">
+                    <div class="mr-1">{{pred.label}}</div>
+                    <div>{{pred.accuracy | percent}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
