@@ -147,9 +147,9 @@ export class DoddleComponent implements OnInit, AfterViewInit {
 
       const batched = normalized.expandDims(0);
 
-      // const resizedCanvas = document.createElement('canvas');
-      // document.body.appendChild(resizedCanvas);
-      // tf.browser.toPixels(normalized as tf.Tensor3D, resizedCanvas);
+      const resizedCanvas = document.createElement('canvas');
+      document.body.appendChild(resizedCanvas);
+      tf.browser.toPixels(normalized as tf.Tensor3D, resizedCanvas);
       this.model.predictTopN(batched, 5).then((predictions) => {
         this.predictions = predictions;
       });
