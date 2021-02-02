@@ -1,0 +1,9 @@
+canvas {
+  border: 1px solid #eee;
+  height: 400px;
+  flex: 1 1 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  @media only screen and (max-width: 600px) {
+    height: 350px;
+  }
+}
