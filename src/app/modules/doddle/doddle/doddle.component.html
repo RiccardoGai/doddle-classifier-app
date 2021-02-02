@@ -1,7 +1,7 @@
-<div class="grid">
-    <div class="col-sm mt-4">
-        <div class="d-flex justify-content-center">
-            <div class="d-flex flex-direction-column">
+<div class="container">
+    <div class="row">
+        <div class="col-24 col-md-8 offset-md-4">
+            <div class="d-flex justify-content-center flex-column mt-3">
                 <canvas #canvas></canvas>
                 <button class="mt-2"
                     (click)="onClear()">
@@ -9,11 +9,9 @@
                 </button>
             </div>
         </div>
-    </div>
-    <div class="col-sm mt-4">
-        <div class="d-flex justify-content-center">
-            <div class="d-flex flex-direction-column">
-                <div class="mb-1 d-flex align-items-center font-weight-semibold"
+        <div class="col-24 col-md-4">
+            <div class="d-flex flex-column mt-3">
+                <div class="mb-1 d-flex align-items-center justify-content-center font-weight-semibold"
                     *ngFor="let pred of predictions">
                     <div class="mr-1">{{pred.label}}</div>
                     <div>{{pred.accuracy | percent}}</div>

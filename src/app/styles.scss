@@ -1,12 +1,13 @@
 @import "styles/normalize.scss";
 @import "styles/form.scss";
-@import "styles/grid.scss";
 @import "styles/spacing.scss";
 @import "styles/utilities.scss";
+@import "styles/bootstrap.scss";
 
 html,
 body {
   font-family: "Source Sans Pro", sans-serif;
+  // overflow: hidden;
 }
 
 * {

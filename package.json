@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~11.0.5",
     "@angular/router": "~11.0.5",
     "@tensorflow/tfjs": "^2.8.2",
+    "bootstrap": "^5.0.0-beta1",
     "core-js": "^3.8.1",
     "express": "^4.17.1",
     "rxjs": "~6.6.3",
