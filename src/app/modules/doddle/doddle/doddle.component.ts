@@ -122,19 +122,19 @@ export class DoddleComponent implements OnInit, AfterViewInit {
     const maxY = Math.max(...this.coordinates.map((x) => x.y));
 
     const dpi = window.devicePixelRatio;
-    const imgData = this.cx.getImageData(
-      minX * dpi,
-      minY * dpi,
-      (maxX - minX) * dpi,
-      (maxY - minY) * dpi
-    );
-
     // const imgData = this.cx.getImageData(
-    //   0,
-    //   0,
-    //   this.canvas.width,
-    //   this.canvas.height
+    //   minX * dpi,
+    //   minY * dpi,
+    //   (maxX - minX) * dpi,
+    //   (maxY - minY) * dpi
     // );
+
+    const imgData = this.cx.getImageData(
+      0,
+      0,
+      this.canvas.width,
+      this.canvas.height
+    );
 
     tf.tidy(() => {
       const tensor = tf.browser.fromPixels(imgData, 1);
