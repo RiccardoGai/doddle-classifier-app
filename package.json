@@ -26,7 +26,6 @@
     "@tensorflow/tfjs": "^2.8.2",
     "bootstrap": "^5.0.0-beta1",
     "core-js": "^3.8.1",
-    "express": "^4.17.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.3",
     "web-animations-js": "^2.3.2",
