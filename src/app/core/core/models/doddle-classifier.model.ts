@@ -9,22 +9,27 @@ export class DoddleClassifier {
 
   async loadModel() {
     this.model = await tf.loadLayersModel('assets/doddle-model/model.json');
-    this.classes = jsonClasses.classes;
+    const { classes } = jsonClasses;
+    this.classes = classes;
   }
 
   async predict(data: tf.Tensor) {
-    const argMax = await (this.model.predict(
-      data // .reshape([1, 28, 28, 1])
-    ) as Tensor)
+    const argMax = await (
+      this.model.predict(
+        data // .reshape([1, 28, 28, 1])
+      ) as Tensor
+    )
       .argMax(-1)
       .data();
     return this.classes[argMax[0]];
   }
 
   async predictTopN(data: tf.Tensor, n: number) {
-    const prediction = await (this.model.predict(
-      data // .reshape([1, 28, 28, 1])
-    ) as Tensor).data();
+    const prediction = await (
+      this.model.predict(
+        data // .reshape([1, 28, 28, 1])
+      ) as Tensor
+    ).data();
     const topValues = Array.from(
       [...prediction].sort((a, b) => b - a).slice(0, n)
     );

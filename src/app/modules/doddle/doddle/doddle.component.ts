@@ -111,7 +111,7 @@ export class DoddleComponent implements OnInit, AfterViewInit {
         this.cx.lineTo(currentPos.x, currentPos.y);
         this.cx.stroke();
       }
-      this.drawing$.next();
+      this.drawing$.next(null);
     });
   }
 
