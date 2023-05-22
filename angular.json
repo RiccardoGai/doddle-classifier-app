@@ -140,6 +140,6 @@
           }
         }
       }
-    }},
-  "defaultProject": "doddle-classifier-app"
+    }
+  }
 }
